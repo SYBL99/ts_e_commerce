@@ -1,0 +1,127 @@
+@import url('null_style.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$header_height: 100px
+$footer_height: 50px
+$main_height: calc(100vh - #{$footer_height})
+
+body
+    font-family: Roboto
+    text-align: center
+    font-size: 2rem
+
+#root
+    height: 100vh
+
+.cards__wrapper
+    display: flex
+    padding: 0px 10px
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: top
+    max-width: 1000px
+    margin: 0 auto
+
+.cart__image
+    cursor: pointer
+
+header
+    height: $header_height
+    color: white
+    width: 100vw
+    z-index: 2
+    position: fixed
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(201,0,255,1) 0%, rgba(101,9,121,1) 100%)
+
+.nav__naming
+    cursor: pointer
+
+.nav__wrap
+    display: flex
+    padding: 0px 10px
+    height: 50px
+    max-width: 1000px
+    margin: 0 auto
+    justify-content: space-between
+    align-items: center
+.header__sort
+    display: flex
+    max-width: 1000px
+    padding: 0 10px
+    margin: 0 auto
+main
+    padding-top:  110px
+    min-height: $main_height
+
+.num
+    font-size: 1.5rem
+    position: relative
+    z-index: 3
+    text-align: center
+    color: red
+    border-radius: 50%
+    right: 22px
+    top: -5px
+    cursor: pointer
+
+footer
+    height: $footer_height
+    background: #9009b6
+    color: white
+    padding: 10px 0
+
+.card
+    padding: 10px
+    min-width: 150px
+    display: flex
+    word-break: break-all
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+    background: #e0ffff
+    border-radius: 20px
+    transition: all ease 0.2s
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    width: 21%
+    overflow: hidden
+    margin-bottom: 20px
+    & img
+        margin-bottom: 10px
+    & h2
+        margin-bottom: 10px
+    &:hover
+        transform: translateY(5px);
+        box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+
+.card__btn
+    padding: 5px 10px
+    align-content: end
+
+.card__chosen
+    display: flex
+    font-size: 1.2rem
+    padding: 0 10px
+    width: 95%
+    word-break: break-all
+    max-width: 1000px
+    margin: 0 auto
+    margin-bottom: 10px
+    & img
+        margin-right: 10px
+
+.side__block
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+.chs__btn
+    width: 100px
+    padding: 5px 10px
+
+@media screen and ( max-width: 700px )
+    .cards__wrapper
+        flex-direction: column
+        align-items: center
+
+    .card
+        width: 90%
+    

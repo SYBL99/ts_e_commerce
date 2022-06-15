@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState} from 'react';
 import './App.css';
+import { type } from '@testing-library/user-event/dist/type';
+import getCards from './API/PostService';
+import { Route, Routes } from 'react-router-dom';
+import Shop from './pages/Shop';
+import Layout from './pages/Layout';
+import Cart from './pages/Cart';
+import { ICardItem, ICardItemArray } from './components/interface/ICardItem';
 
 function App() {
+  const [sortValue, setSortValue] = useState(0)
+  const [chosen, setChosen] = useState<ICardItemArray>({arr: []})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path='/' element={<Layout chosen={chosen} sortValue={sortValue} setSortValue={setSortValue}/>}>
+          <Route index element={<Shop chosen={chosen} setChosen={setChosen} sortValue={sortValue} setSortValue={setSortValue} />}/>
+          <Route path='/cart' element={<Cart chosen={chosen} setChosen ={setChosen}/>}/>
+        </Route>
+      </Routes>
+    </>
+  )
 }
 
 export default App;
