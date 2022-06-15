@@ -17,6 +17,7 @@ function Cart({ chosen, setChosen }: IShop) {
             {chosen.arr.map(item => <ChosenItem key={item.id} category={item.category} 
             id={item.id} title={item.title} url={item.url} 
             clickHandler={deleteItem}/>)}
+            {chosen.arr.length === 0 ? <h2>Корзина пуста</h2> : <button className='card__btn'>Оформить</button>}
         </>
     )
 }
