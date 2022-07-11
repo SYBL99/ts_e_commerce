@@ -2,4 +2,4 @@
 
 Небольшой пример магазина, написанного на TypeScript.
 
-https://ts-e-commerce-deploy-dzq4ryalv-sybl99.vercel.app/
+Хостинг - https://ts-e-commerce.vercel.app/
