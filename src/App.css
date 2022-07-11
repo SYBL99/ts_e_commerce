@@ -31,6 +31,10 @@ body {
   cursor: pointer;
 }
 
+.cart__text {
+  font-size: 1rem;
+}
+
 header {
   height: 100px;
   color: white;
@@ -70,6 +74,16 @@ header {
   margin: 0 auto;
 }
 
+.sort__child:hover {
+  color: blue;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.sort__child:not(:last-child) {
+  margin-right: 10px;
+}
+
 main {
   padding-top: 110px;
   min-height: calc(100vh - 50px);
@@ -77,12 +91,15 @@ main {
 
 .num {
   font-size: 1.5rem;
+  display: inline-block;
   position: relative;
   z-index: 3;
   text-align: center;
   color: red;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-  right: 22px;
+  right: 28px;
   top: -5px;
   cursor: pointer;
 }
@@ -190,6 +207,9 @@ footer {
   }
   .card {
     width: 90%;
+  }
+  html {
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/header/header';
-import {ICardItemArray } from "../components/interface/ICardItem";
+import {ICardItemArray } from "../components/interfaces/ICardItem";
 
-interface PropTypes {
+interface LayoutTypes {
     chosen: ICardItemArray
-    sortValue: number
     setSortValue: React.Dispatch<React.SetStateAction<number>>
 }
-function Layout({chosen, sortValue, setSortValue}: PropTypes) {
+function Layout({chosen, setSortValue}: LayoutTypes) {
     return (
         <>
-            <Header numOfChosen={chosen} sortValue={sortValue} setSortValue={setSortValue} />
+            <Header numOfChosen={chosen} setSortValue={setSortValue} />
             <main>
                 <Outlet/>
             </main>

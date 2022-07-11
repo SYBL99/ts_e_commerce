@@ -25,6 +25,9 @@ body
 .cart__image
     cursor: pointer
 
+.cart__text
+    font-size: 1rem
+
 header
     height: $header_height
     color: white
@@ -44,23 +47,36 @@ header
     margin: 0 auto
     justify-content: space-between
     align-items: center
+
 .header__sort
     display: flex
     max-width: 1000px
     padding: 0 10px
     margin: 0 auto
+
+.sort__child:hover
+   color: blue
+   transition: all 1s
+
+.sort__child:not(:last-child)
+    margin-right: 10px
+
+
 main
     padding-top:  110px
     min-height: $main_height
 
 .num
     font-size: 1.5rem
+    display: inline-block
     position: relative
     z-index: 3
     text-align: center
     color: red
+    width: 25px
+    height: 25px
     border-radius: 50%
-    right: 22px
+    right: 28px
     top: -5px
     cursor: pointer
 
@@ -113,6 +129,7 @@ footer
     display: flex
     justify-content: space-between
     flex-direction: column
+
 .chs__btn
     width: 100px
     padding: 5px 10px
@@ -124,4 +141,7 @@ footer
 
     .card
         width: 90%
+
+    html
+        font-size: 10px
     

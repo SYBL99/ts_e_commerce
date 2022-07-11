@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, ReactPropTypes, useState } from "react";
 import Card from '../card/Card';
-import { ICardItem, ICardItemArray } from "../interface/ICardItem";
+import { ICardItem, ICardItemArray } from "../interfaces/ICardItem";
 interface PropTypes {
     arr: ICardItem[]
     add: (item: ICardItem)=>void

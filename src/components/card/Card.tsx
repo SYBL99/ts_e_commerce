@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { ICardItemClick } from "../interface/ICardItem";
+import { ICardItemClick } from "../interfaces/ICardItem";
 
 const Card: FC<ICardItemClick> = ({title, url, category, id, clickHandler}) => {
     return (

@@ -6,15 +6,16 @@ import { Route, Routes } from 'react-router-dom';
 import Shop from './pages/Shop';
 import Layout from './pages/Layout';
 import Cart from './pages/Cart';
-import { ICardItem, ICardItemArray } from './components/interface/ICardItem';
+import { ICardItem, ICardItemArray } from './components/interfaces/ICardItem';
 
 function App() {
   const [sortValue, setSortValue] = useState(0)
   const [chosen, setChosen] = useState<ICardItemArray>({arr: []})
+  
   return (
     <>
       <Routes>
-        <Route path='/' element={<Layout chosen={chosen} sortValue={sortValue} setSortValue={setSortValue}/>}>
+        <Route path='/' element={<Layout chosen={chosen} setSortValue={setSortValue}/>}>
           <Route index element={<Shop chosen={chosen} setChosen={setChosen} sortValue={sortValue} setSortValue={setSortValue} />}/>
           <Route path='/cart' element={<Cart chosen={chosen} setChosen ={setChosen}/>}/>
         </Route>

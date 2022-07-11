@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FC } from 'react';
 import CardList from '../components/cardList/CardList';
 import getCards from '../API/PostService';
-import { ICardItem, ICardItemArray } from "../components/interface/ICardItem";
+import { ICardItem, ICardItemArray } from "../components/interfaces/ICardItem";
 
 interface IShop {
     chosen: ICardItemArray

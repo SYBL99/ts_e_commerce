@@ -1,6 +1,6 @@
 import React from 'react';
 import ChosenItem from '../components/chosenItem/ChosenItem';
-import { ICardItemArray, ICardItem } from '../components/interface/ICardItem';
+import { ICardItemArray, ICardItem } from '../components/interfaces/ICardItem';
 interface IShop {
     chosen: ICardItemArray
     setChosen: React.Dispatch<React.SetStateAction<ICardItemArray>>
@@ -8,10 +8,12 @@ interface IShop {
 }
 
 function Cart({ chosen, setChosen }: IShop) {
+
     function deleteItem(item: ICardItem): void {
         setChosen({ arr: chosen.arr.filter(arrElem => {
             return arrElem.id !== item.id})})
     }
+
     return (
         <>
             {chosen.arr.map(item => <ChosenItem key={item.id} category={item.category} 
