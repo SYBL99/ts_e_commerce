@@ -22,6 +22,16 @@ body
     max-width: 1000px
     margin: 0 auto
 
+.cart__outlet
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    margin-top: 10px
+
+.cart__group
+    padding-left: 20px
+
 .cart__image
     cursor: pointer
 
@@ -31,7 +41,7 @@ body
 header
     height: $header_height
     color: white
-    width: 100vw
+    width: 100%
     z-index: 2
     position: fixed
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(201,0,255,1) 0%, rgba(101,9,121,1) 100%)
@@ -67,7 +77,7 @@ main
     min-height: $main_height
 
 .num
-    font-size: 1.5rem
+    font-size: 1.2rem
     display: inline-block
     position: relative
     z-index: 3

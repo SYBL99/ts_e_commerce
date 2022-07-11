@@ -27,6 +27,27 @@ body {
   margin: 0 auto;
 }
 
+.cart__outlet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+}
+
+.cart__group {
+  padding-left: 20px;
+}
+
 .cart__image {
   cursor: pointer;
 }
@@ -38,7 +59,7 @@ body {
 header {
   height: 100px;
   color: white;
-  width: 100vw;
+  width: 100%;
   z-index: 2;
   position: fixed;
   background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(0%, #c900ff), to(#650979));
@@ -90,7 +111,7 @@ main {
 }
 
 .num {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: inline-block;
   position: relative;
   z-index: 3;

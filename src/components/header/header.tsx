@@ -14,9 +14,11 @@ const Header: FC<HeaderTypes> = ({numOfChosen, setSortValue}) => {
         <header>
                 <nav className="nav__wrap">
                     <div onClick={() => nav('/')} className='nav__naming'>Магазин</div>
-                    <div onClick={() => nav('/cart')}>
-                        <img className='cart__image' alt='cart' src="img/shopping-cart.png" width='40px' height='40px' />
-                        <span className='num'>{numOfChosen.arr.length}</span>
+                    <div className='cart__outlet' onClick={() => nav('/cart')}>
+                        <div className="cart__group">
+                            <img className='cart__image' alt='cart' src="img/shopping-cart.png" width='35px' height='35px' />
+                            <span className='num'>{numOfChosen.arr.length}</span>
+                        </div>
                         <p className='cart__text'>корзина</p>
                     </div>
                 </nav>

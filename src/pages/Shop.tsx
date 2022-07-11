@@ -30,13 +30,17 @@ function Shop({chosen, setChosen, sortValue, setSortValue}:IShop) {
     const [cards, setCards] = useState<ICardItemArray>({arr:[]})
     const [sortCards, setSortCards] = useState<ICardItemArray>({arr:[]})
 
-    function show(item: ICardItem ):void {
-        setChosen({arr: [...chosen.arr, item] })
+    function checkUniq(item: ICardItem ):void {
+        let flag = true;
+        chosen.arr.forEach(element => {if (element.id === item.id) {flag = false}})
+        if (flag === true) {
+            setChosen({ arr: [...chosen.arr, item] })
+        }
     }
     return (
         <>
             <div className="cards__wrapper">
-                <CardList arr={sortCards.arr} add={show}/>
+                <CardList arr={sortCards.arr} add={checkUniq}/>
             </div>
         </>
     )
