@@ -1,12 +1,12 @@
-import React, { FC, ReactNode, ReactPropTypes, useState } from "react";
+import React from "react";
 import Card from '../card/Card';
-import { ICardItem, ICardItemArray } from "../interfaces/ICardItem";
-interface PropTypes {
+import { ICardItem} from "../interfaces/ICardItem";
+interface CardListTypes {
     arr: ICardItem[]
     add: (item: ICardItem)=>void
 }
 
-const CardList: React.FC<PropTypes> = ({arr, add}) => {
+const CardList: React.FC<CardListTypes> = ({arr, add}) => {
     return (
         <>
             {arr.map(element => <Card clickHandler={add} 

@@ -1,16 +1,16 @@
 import React, { useState, useEffect, FC } from 'react';
 import CardList from '../components/cardList/CardList';
 import getCards from '../API/PostService';
-import { ICardItem, ICardItemArray } from "../components/interfaces/ICardItem";
+import { ICardItem } from "../components/interfaces/ICardItem";
 
-interface IShop {
-    chosen: ICardItemArray
-    setChosen: React.Dispatch<React.SetStateAction<ICardItemArray>>
+interface ShopTypes {
+    chosen: ICardItem[]
+    setChosen: React.Dispatch<React.SetStateAction<ICardItem[]>>
     sortValue: number
     setSortValue: React.Dispatch<React.SetStateAction<number>>
     clickHandler?: (item: ICardItem) => void
 }
-function Shop({chosen, setChosen, sortValue, setSortValue}:IShop) {
+const Shop: FC<ShopTypes> = ({chosen, setChosen, sortValue, setSortValue}) => {
 
     async function load() {
         const data = await getCards()
@@ -19,28 +19,27 @@ function Shop({chosen, setChosen, sortValue, setSortValue}:IShop) {
     }
 
     function cardByCategory () {
-        const data: ICardItemArray = 
-        {arr: cards.arr.filter(element => element.category === sortValue || sortValue === 0) }
+        const data: ICardItem[] = cards.filter(element => element.category === sortValue || sortValue === 0)
         setSortCards(data)
     }
 
     useEffect(() => {load()}, [])
     useEffect(() => {cardByCategory()}, [sortValue])
 
-    const [cards, setCards] = useState<ICardItemArray>({arr:[]})
-    const [sortCards, setSortCards] = useState<ICardItemArray>({arr:[]})
+    const [cards, setCards] = useState<ICardItem[]>([])
+    const [sortCards, setSortCards] = useState<ICardItem[]>([])
 
     function checkUniq(item: ICardItem ):void {
         let flag = true;
-        chosen.arr.forEach(element => {if (element.id === item.id) {flag = false}})
+        chosen.forEach(element => {if (element.id === item.id) {flag = false}})
         if (flag === true) {
-            setChosen({ arr: [...chosen.arr, item] })
+            setChosen([...chosen, item])
         }
     }
     return (
         <>
             <div className="cards__wrapper">
-                <CardList arr={sortCards.arr} add={checkUniq}/>
+                <CardList arr={sortCards} add={checkUniq}/>
             </div>
         </>
     )

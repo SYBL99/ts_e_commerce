@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/header/header';
-import {ICardItemArray } from "../components/interfaces/ICardItem";
+import {ICardItem } from "../components/interfaces/ICardItem";
 
 interface LayoutTypes {
-    chosen: ICardItemArray
+    chosen: ICardItem[]
     setSortValue: React.Dispatch<React.SetStateAction<number>>
 }
-function Layout({chosen, setSortValue}: LayoutTypes) {
+const Layout: FC <LayoutTypes> = ({chosen, setSortValue}) => {
     return (
         <>
             <Header numOfChosen={chosen} setSortValue={setSortValue} />
+            
             <main>
                 <Outlet/>
             </main>
 
             <footer>
-                Подвал
+                2022
             </footer>
         </>
     )

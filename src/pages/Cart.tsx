@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { FC } from 'react';
 import ChosenItem from '../components/chosenItem/ChosenItem';
-import { ICardItemArray, ICardItem } from '../components/interfaces/ICardItem';
-interface IShop {
-    chosen: ICardItemArray
-    setChosen: React.Dispatch<React.SetStateAction<ICardItemArray>>
+import { ICardItem } from '../components/interfaces/ICardItem';
+
+interface CartTypes {
+    chosen: ICardItem[]
+    setChosen: React.Dispatch<React.SetStateAction<ICardItem[]>>
     clickHandler?: (item: ICardItem) => void
 }
 
-function Cart({ chosen, setChosen }: IShop) {
+const Cart: FC <CartTypes> = ({ chosen, setChosen }) => {
 
     function deleteItem(item: ICardItem): void {
-        setChosen({ arr: chosen.arr.filter(arrElem => {
-            return arrElem.id !== item.id})})
+        setChosen(chosen.filter(arrElem => {
+            return arrElem.id !== item.id}))
     }
 
     return (
         <>
-            {chosen.arr.map(item => <ChosenItem key={item.id} category={item.category} 
+            {chosen.map(item => <ChosenItem key={item.id} category={item.category} 
             id={item.id} title={item.title} url={item.url} 
             clickHandler={deleteItem}/>)}
-            {chosen.arr.length === 0 ? <h2>Корзина пуста</h2> : <button className='card__btn'>Оформить</button>}
+            {chosen.length === 0 ? <h2 className='subtitle'>Корзина пуста</h2> : <button className='card__btn'>Оформить</button>}
         </>
     )
 }

@@ -1,12 +1,12 @@
-import React, { FC, ReactNode, ReactPropTypes, useState } from "react";
+import React from "react";
 import ChosenItem from "../chosenItem/ChosenItem";
-import { ICardItem, ICardItemArray } from "../interfaces/ICardItem";
-interface PropTypes {
+import { ICardItem } from "../interfaces/ICardItem";
+interface ChosenListTypes {
     arr: ICardItem[]
     add: (item: ICardItem) => void
 }
 
-const ChosenList: React.FC<PropTypes> = ({ arr, add }) => {
+const ChosenList: React.FC<ChosenListTypes> = ({ arr, add }) => {
     return (
         <>
             {arr.map(element => <ChosenItem clickHandler={add}

@@ -4,30 +4,87 @@
 $header_height: 100px
 $footer_height: 50px
 $main_height: calc(100vh - #{$footer_height})
-
-body
-    font-family: Roboto
-    text-align: center
-    font-size: 2rem
+$card_color: #f8f8f8
+$card_image_size: 300px
 
 #root
     height: 100vh
 
-.cards__wrapper
+body
+    font-family: Roboto
+
+header
+    height: $header_height
+    color: white
+    width: 100%
+    z-index: 2
+    position: fixed
+
+.nav__wrap
+    background: #131921
+    max-width: 100%
+
+.header__nav
     display: flex
-    padding: 0px 10px
-    flex-wrap: wrap
     justify-content: space-between
-    align-items: top
-    max-width: 1000px
+    align-items: center
+    font-size: 2.2rem
+    max-width: 1200px
     margin: 0 auto
+
+.nav__naming
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0px 0px 0px 10px
+    height: 60px
+    cursor: pointer
+
+.sort__wrap
+    background: #222f3e
+    max-width: 100%
+
+.no-scrollbar 
+    -ms-overflow-style: none
+    scrollbar-width: none
+    white-space: nowrap
+    overflow: hidden
+    overflow-y: hidden
+    overflow-x: scroll
+    -webkit-overflow-scrolling: touch
+    &::-webkit-scrollbar
+        width: 0
+        display: none
+
+.header__sort
+    display: flex
+    align-items: center
+    max-width: 1200px
+    font-size: 1.6rem
+    height: 40px
+    padding: 0px 10px
+    margin: 0 auto
+    background: #222f3e
+
+.sort__child
+    transition: all 0.5s
+    color: white
+    &:not(:last-child)
+        margin-right: 15px
+    &:hover
+        color: orange
+    &.active
+        margin-right: 15px
+        color: orange
+
 
 .cart__outlet
     display: flex
+    height: 60px
     justify-content: center
     align-items: center
     flex-direction: column
-    margin-top: 10px
+    cursor: pointer
 
 .cart__group
     padding-left: 20px
@@ -38,90 +95,65 @@ body
 .cart__text
     font-size: 1rem
 
-header
-    height: $header_height
-    color: white
-    width: 100%
-    z-index: 2
-    position: fixed
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(201,0,255,1) 0%, rgba(101,9,121,1) 100%)
-
-.nav__naming
-    cursor: pointer
-
-.nav__wrap
-    display: flex
-    padding: 0px 10px
-    height: 50px
-    max-width: 1000px
-    margin: 0 auto
-    justify-content: space-between
-    align-items: center
-
-.header__sort
-    display: flex
-    max-width: 1000px
-    padding: 0 10px
-    margin: 0 auto
-
-.sort__child:hover
-   color: blue
-   transition: all 1s
-
-.sort__child:not(:last-child)
-    margin-right: 10px
-
-
 main
     padding-top:  110px
     min-height: $main_height
 
 .num
-    font-size: 1.2rem
+    font-size: 1.4rem
     display: inline-block
     position: relative
     z-index: 3
     text-align: center
-    color: red
+    color: orange
     width: 25px
     height: 25px
     border-radius: 50%
-    right: 28px
-    top: -5px
+    right: 29px
+    top: -3px
     cursor: pointer
 
-footer
-    height: $footer_height
-    background: #9009b6
-    color: white
-    padding: 10px 0
+.cards__wrapper
+    display: flex
+    padding: 0px 10px
+    gap: 15px
+    flex-wrap: wrap
+    justify-content: center
+    max-width: 1200px
+    margin: 0 auto
 
 .card
-    padding: 10px
-    min-width: 150px
+    width: calc((1200px - 18px*4)/4)
+    font-size: 1.3rem
+    border: 2px solid #f5f2f2
     display: flex
-    word-break: break-all
     align-items: center
+    margin-bottom: 10px
     justify-content: space-between
     flex-direction: column
-    background: #e0ffff
-    border-radius: 20px
+    background: white
     transition: all ease 0.2s
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-    width: 21%
     overflow: hidden
-    margin-bottom: 20px
     & img
         margin-bottom: 10px
-    & h2
+        width: calc((1200px - 18px*4)/4)
+        height: calc((1200px - 18px*4)/4)
+    & p
+        padding: 0 5px
+        word-break: break-word
+        display: inline-block
+        height: 35%
+        overflow: hidden
         margin-bottom: 10px
     &:hover
-        transform: translateY(5px);
-        box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+        transform: translateY(1px);
+        box-shadow: inset 0px 10px 10px 2px rgba(0, 0, 0, 0.25);
 
 .card__btn
     padding: 5px 10px
-    align-content: end
+    margin-bottom: 5px
+
 
 .card__chosen
     display: flex
@@ -144,14 +176,51 @@ footer
     width: 100px
     padding: 5px 10px
 
-@media screen and ( max-width: 700px )
+footer
+    height: $footer_height
+    text-align: center
+    font-size: 2rem
+    background: #131A22
+    color: white
+    padding: 10px 0
+
+.subtitle
+    text-align: center
+    font-size: 2rem
+    font-weight: bold
+    font-family: Roboto
+
+@media screen and ( max-width: 1199px )
+    .card
+        width: calc((100vw - 25px*4)/4
+        & img
+            width: calc((100vw - 25px*4)/4
+            height: calc((100vw - 25px*4)/4
+
+@media screen and ( max-width: 769px )
+    .card
+        width: calc((100vw - 25px*3)/3
+        & img
+            width: calc((100vw - 25px*3)/3
+            height: calc((100vw - 25px*3)/3
+
+@media screen and ( max-width: 479px )
+    html
+        font-size: 12px
+    
     .cards__wrapper
-        flex-direction: column
-        align-items: center
+        gap: 10px
+
+    .num
+        top: 0px
 
     .card
-        width: 90%
+        width: calc((100vw - 25px*2)/2
+        & img
+            width: calc((100vw - 25px*2)/2
+            height: calc((100vw - 25px*2)/2
 
-    html
-        font-size: 10px
-    
+    .card__btn
+        margin-bottom: 0
+        padding: 5px 10px
+        width: 100%

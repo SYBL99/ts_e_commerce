@@ -5,10 +5,6 @@ export interface ICardItem {
     url: string
 }
 
-export interface ICardItemArray {
-    arr: Array<ICardItem>
-}
-
 export interface ICardItemClick extends ICardItem{
     clickHandler: (item: ICardItem) => void
 }
