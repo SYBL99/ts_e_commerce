@@ -15,7 +15,7 @@ const Cart: FC <CartTypes> = ({ chosen, setChosen }) => {
             {chosen.map(item => <ChosenItem key={item.id} category={item.category} 
             id={item.id} title={item.title} url={item.url} 
             clickHandler={deleteItem}/>)}
-            {chosen.length === 0 ? <h2 className='subtitle'>Корзина пуста</h2> : <button className='card__btn'>Оформить</button>}
+            {chosen.length === 0 ? <h2 className='subtitle'>Корзина пуста</h2> : <button className='cart__btn'>Оформить</button>}
         </>
     )
 }
