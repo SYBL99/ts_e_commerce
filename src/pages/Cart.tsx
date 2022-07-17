@@ -1,12 +1,7 @@
 import React, { FC } from 'react';
 import ChosenItem from '../components/chosenItem/ChosenItem';
 import { ICardItem } from '../components/interfaces/ICardItem';
-
-interface CartTypes {
-    chosen: ICardItem[]
-    setChosen: React.Dispatch<React.SetStateAction<ICardItem[]>>
-    clickHandler?: (item: ICardItem) => void
-}
+import { CartTypes } from '../components/interfaces/ComponetsProps';
 
 const Cart: FC <CartTypes> = ({ chosen, setChosen }) => {
 

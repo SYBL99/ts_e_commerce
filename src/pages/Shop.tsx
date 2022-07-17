@@ -2,14 +2,8 @@ import React, { useState, useEffect, FC } from 'react';
 import CardList from '../components/cardList/CardList';
 import getCards from '../API/PostService';
 import { ICardItem } from "../components/interfaces/ICardItem";
+import { ShopTypes } from '../components/interfaces/ComponetsProps';
 
-interface ShopTypes {
-    chosen: ICardItem[]
-    setChosen: React.Dispatch<React.SetStateAction<ICardItem[]>>
-    sortValue: number
-    setSortValue: React.Dispatch<React.SetStateAction<number>>
-    clickHandler?: (item: ICardItem) => void
-}
 const Shop: FC<ShopTypes> = ({chosen, setChosen, sortValue, setSortValue}) => {
 
     async function load() {

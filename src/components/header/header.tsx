@@ -1,11 +1,6 @@
-import React, { useContext, FC, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ICardItem } from "../interfaces/ICardItem";
-
-interface HeaderTypes {
-    numOfChosen: ICardItem[]
-    setSortValue: React.Dispatch<React.SetStateAction<number>>
-}
+import { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { HeaderTypes } from '../interfaces/ComponetsProps';
 
 const Header: FC<HeaderTypes> = ({numOfChosen, setSortValue}) => {
     const nav = useNavigate()

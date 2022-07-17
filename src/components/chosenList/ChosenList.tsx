@@ -1,10 +1,6 @@
 import React from "react";
 import ChosenItem from "../chosenItem/ChosenItem";
-import { ICardItem } from "../interfaces/ICardItem";
-interface ChosenListTypes {
-    arr: ICardItem[]
-    add: (item: ICardItem) => void
-}
+import { ChosenListTypes } from "../interfaces/ComponetsProps";
 
 const ChosenList: React.FC<ChosenListTypes> = ({ arr, add }) => {
     return (

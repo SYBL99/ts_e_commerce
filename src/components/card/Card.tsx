@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC } from "react";
 import { ICardItemClick } from "../interfaces/ICardItem";
 
 const Card: FC<ICardItemClick> = ({title, url, category, id, clickHandler}) => {
