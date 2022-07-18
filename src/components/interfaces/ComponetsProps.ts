@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 import { ICardItem } from "./ICardItem"
 
 export interface ShopTypes {
@@ -9,11 +10,6 @@ export interface ShopTypes {
 }
 
 export interface CardListTypes {
-    arr: ICardItem[]
-    add: (item: ICardItem) => void
-}
-
-export interface ChosenListTypes {
     arr: ICardItem[]
     add: (item: ICardItem) => void
 }
@@ -32,4 +28,15 @@ export interface CartTypes {
 export interface LayoutTypes {
     chosen: ICardItem[]
     setSortValue: React.Dispatch<React.SetStateAction<number>>
+}
+
+export interface ChosenListTypes {
+    chosen: ICardItem[]
+    setChosen: React.Dispatch<React.SetStateAction<ICardItem[]>>
+}
+
+export interface MyModalTypes {
+    children: ReactNode
+    visible: boolean
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
 }

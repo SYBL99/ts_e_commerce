@@ -1,21 +1,16 @@
-import React, { FC } from 'react';
-import ChosenItem from '../components/chosenItem/ChosenItem';
-import { ICardItem } from '../components/interfaces/ICardItem';
+import React, { FC, useState } from 'react';
 import { CartTypes } from '../components/interfaces/ComponetsProps';
+import ChosenList from '../components/chosenList/ChosenList';
+import MyModal from '../components/modal/MyModal';
+import ConfirmForm from '../components/confirmForm/ConfirmForm';
 
 const Cart: FC <CartTypes> = ({ chosen, setChosen }) => {
-
-    function deleteItem(item: ICardItem): void {
-        setChosen(chosen.filter(arrElem => {
-            return arrElem.id !== item.id}))
-    }
-
+    const [modal, setModal] = useState(false)
     return (
         <>
-            {chosen.map(item => <ChosenItem key={item.id} category={item.category} 
-            id={item.id} title={item.title} url={item.url} 
-            clickHandler={deleteItem}/>)}
-            {chosen.length === 0 ? <h2 className='subtitle'>Корзина пуста</h2> : <button className='cart__btn'>Оформить</button>}
+            <ChosenList chosen={chosen} setChosen={setChosen}/>
+            <MyModal children={<ConfirmForm/>} visible={modal} setVisible={setModal}/>
+            {chosen.length === 0 ? <h2 className='subtitle'>Корзина пуста</h2> : <button className='buy__btn' onClick={() => setModal(!modal)}>Оформить</button>}
         </>
     )
 }

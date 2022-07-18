@@ -1,0 +1,25 @@
+.input {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    width: 100%;
+}
+.label {
+    display: block;
+    font-size: 1.2rem;
+    width: 100%;
+}
+.button {
+    margin: 0 auto;
+    display: block;
+    padding: 5px 10px;
+    background: #FFF;
+    border-radius: 3px;
+    border-color: #D5D9D9;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none !important;
+}
