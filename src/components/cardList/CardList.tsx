@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import Card from '../card/Card';
 import { CardListTypes } from "../interfaces/ComponetsProps";
 
-const CardList: React.FC<CardListTypes> = ({arr, add}) => {
+const CardList: FC<CardListTypes> = ({arr, add}) => {
     return (
         <>
             {arr.map(element => <Card clickHandler={add} 

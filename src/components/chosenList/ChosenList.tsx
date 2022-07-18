@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import ChosenItem from "../chosenItem/ChosenItem";
 import { ICardItem } from '../../components/interfaces/ICardItem';
 import { ChosenListTypes } from "../interfaces/ComponetsProps";
 
-const ChosenList: React.FC<ChosenListTypes> = ({ chosen, setChosen }) => {
+const ChosenList: FC<ChosenListTypes> = ({ chosen, setChosen }) => {
 
     function deleteItem(item: ICardItem): void {
         setChosen(chosen.filter(arrElem => {

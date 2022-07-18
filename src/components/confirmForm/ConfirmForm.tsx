@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import cl from './ConfirmForm.module.css'
 
-const ConfirmForm = () => {
+const ConfirmForm: FC = () => {
 
     return (
         <form>
