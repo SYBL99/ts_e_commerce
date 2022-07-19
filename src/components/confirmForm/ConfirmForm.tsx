@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import cl from './ConfirmForm.module.css'
+import { ConfirmFormTypes } from '../interfaces/ComponetsProps'
+const ConfirmForm: FC<ConfirmFormTypes> = ({setVisible}) => {
 
-const ConfirmForm: FC = () => {
 
     return (
         <form>
@@ -14,7 +15,7 @@ const ConfirmForm: FC = () => {
                 <input className={cl.input} type="date"></input>
                 <label className={cl.label} >Адрес доставки</label>
                 <input className={cl.input} placeholder="*Встроить API гугла*" type="tel"></input>
-                <button className={cl.button} onClick={(e)=> e.preventDefault()}>Подтвердить</button>
+                <button className={cl.button} onClick={(e)=> {e.preventDefault() ; setVisible(false)}}>Подтвердить</button>
             </div>
         </form>
     )

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC } from 'react';
+import { useState, useEffect, FC } from 'react';
 import CardList from '../components/cardList/CardList';
 import getCards from '../API/PostService';
 import { ICardItem } from "../components/interfaces/ICardItem";

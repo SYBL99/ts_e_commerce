@@ -1,7 +1,5 @@
-import React, { useState} from 'react';
-import './App.css';
-import { type } from '@testing-library/user-event/dist/type';
-import getCards from './API/PostService';
+import { useState} from 'react';
+import './css/App.css';
 import { Route, Routes } from 'react-router-dom';
 import Shop from './pages/Shop';
 import Layout from './pages/Layout';

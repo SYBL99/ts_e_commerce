@@ -40,3 +40,7 @@ export interface MyModalTypes {
     visible: boolean
     setVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export interface ConfirmFormTypes {
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>
+}

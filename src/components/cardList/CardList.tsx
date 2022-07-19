@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Card from '../card/Card';
 import { CardListTypes } from "../interfaces/ComponetsProps";
 

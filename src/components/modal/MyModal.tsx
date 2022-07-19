@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { MyModalTypes } from "../interfaces/ComponetsProps";
 import cl from './MyModal.module.css'
 
