@@ -16,7 +16,7 @@ const ChosenList: FC<ChosenListTypes> = ({ chosen, setChosen }) => {
             {chosen.map(item => <ChosenItem key={item.id} category={item.category}
                 id={item.id} title={item.title} url={item.url} price={item.price}
                 clickHandler={deleteItem} />)}
-            {chosen.length === 0|| <div className="cart__price">Итоговая цена: {summary}$</div>}
+            {chosen.length === 0 || <div className="cart__price">Итоговая цена: {Math.round(summary * 100) / 100}$</div>}
         </>
     )
 }
