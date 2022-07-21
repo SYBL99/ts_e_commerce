@@ -6,7 +6,7 @@ import categories from "../../utils/categories"
 const Header: FC<HeaderTypes> = ({numOfChosen, setSortValue}) => {
     const nav = useNavigate()
 
-    const [categoryState, setCategoryState] = useState([{ name: "All", sortValue: 0, active: true}
+    const [categoryState, setCategoryState] = useState([{ name: "all", sortValue: 0, active: true}
         , ...categories.map((item, index) => (
             { name: item, sortValue: index + 1, active: false }))
         ])

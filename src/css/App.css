@@ -256,7 +256,17 @@ main {
   display: block;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.cart__price {
+  display: block;
+  width: 200px;
+  color: green;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .card__chosen {
@@ -265,7 +275,7 @@ main {
   display: flex;
   font-size: 1.2rem;
   padding: 0 10px;
-  width: 95%;
+  width: 90%;
   word-break: break-all;
   max-width: 1000px;
   margin: 0 auto;
@@ -274,9 +284,12 @@ main {
 
 .card__chosen img {
   margin-right: 10px;
+  width: 150px;
+  height: 150px;
 }
 
 .side__block {
+  width: calc(100% - 150px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,14 +341,14 @@ footer {
 
 @media screen and (max-width: 769px) {
   .card {
-    width: calc((100vw - 25px*3)/3);
+    width: calc((100vw - 23px*3)/3);
   }
   .card p {
     height: 35px;
   }
   .card img {
-    width: calc((100vw - 25px*3)/3);
-    height: calc((100vw - 25px*3)/3);
+    width: calc((100vw - 23px*3)/3);
+    height: calc((100vw - 23px*3)/3);
   }
 }
 
@@ -350,11 +363,14 @@ footer {
     top: 0px;
   }
   .card {
-    width: calc((100vw - 25px*2)/2);
+    width: calc((100vw - 24px*2)/2);
+  }
+  .card p {
+    height: 31.5px;
   }
   .card img {
-    width: calc((100vw - 25px*2)/2);
-    height: calc((100vw - 25px*2)/2);
+    width: calc((100vw - 24px*2)/2);
+    height: calc((100vw - 24px*2)/2);
   }
   .card__btn {
     padding: 5px 10px;
