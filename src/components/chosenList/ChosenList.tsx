@@ -13,7 +13,7 @@ const ChosenList: FC<ChosenListTypes> = ({ chosen, setChosen }) => {
     return (
         <>
             {chosen.map(item => <ChosenItem key={item.id} category={item.category}
-                id={item.id} title={item.title} url={item.url}
+                id={item.id} title={item.title} url={item.url} price={item.price}
                 clickHandler={deleteItem} />)}
         </>
     )

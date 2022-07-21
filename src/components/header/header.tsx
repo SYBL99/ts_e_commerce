@@ -1,15 +1,16 @@
 import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HeaderTypes } from '../interfaces/ComponetsProps';
+import categories from "../../utils/categories"
 
 const Header: FC<HeaderTypes> = ({numOfChosen, setSortValue}) => {
     const nav = useNavigate()
 
-    const [categoryState, setCategoryState] = useState([
-        { name: "Все товары", sortValue: 0, active: true },
-        { name: "Категория 1", sortValue: 1, active: false },
-        { name: "Категория 2", sortValue: 2, active: false },])
-    
+    const [categoryState, setCategoryState] = useState([{ name: "All", sortValue: 0, active: true}
+        , ...categories.map((item, index) => (
+            { name: item, sortValue: index + 1, active: false }))
+        ])
+    console.log(categoryState)
     function setActiveCategory (indexForChange: number) {
         const buff = categoryState.map((element, index) => { if (index === indexForChange) 
             element.active = true;

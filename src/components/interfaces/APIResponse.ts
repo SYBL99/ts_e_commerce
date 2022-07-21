@@ -1,7 +1,12 @@
 export interface APIResponseTypes {
-    albumId: number;
+    category: string;
+    description: string;
     id: number;
+    image: string;
+    price: number;
+    rating: {
+        count: number;
+        rate: number;
+    }
     title: string;
-    url: string;
-    thumbnailUrl: string;
 }
