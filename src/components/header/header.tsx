@@ -10,7 +10,6 @@ const Header: FC<HeaderTypes> = ({numOfChosen, setSortValue}) => {
         , ...categories.map((item, index) => (
             { name: item, sortValue: index + 1, active: false }))
         ])
-    console.log(categoryState)
     function setActiveCategory (indexForChange: number) {
         const buff = categoryState.map((element, index) => { if (index === indexForChange) 
             element.active = true;

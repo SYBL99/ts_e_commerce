@@ -3,7 +3,6 @@ import cl from './ConfirmForm.module.css'
 import { ConfirmFormTypes } from '../interfaces/ComponetsProps'
 const ConfirmForm: FC<ConfirmFormTypes> = ({setVisible}) => {
 
-
     return (
         <form>
             <div>
